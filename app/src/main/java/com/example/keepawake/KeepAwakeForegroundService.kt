@@ -18,7 +18,6 @@ class KeepAwakeForegroundService : Service() {
         private const val CHANNEL_ID = "KeepAwakeServiceChannel"
         private const val CHANNEL_NAME = "Keep Awake Service"
 
-        // Helper method to start the service
         fun startService(context: Context) {
             val intent = Intent(context, KeepAwakeForegroundService::class.java)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -28,7 +27,6 @@ class KeepAwakeForegroundService : Service() {
             }
         }
 
-        // Helper method to stop the service
         fun stopService(context: Context) {
             val intent = Intent(context, KeepAwakeForegroundService::class.java)
             context.stopService(intent)
@@ -44,24 +42,20 @@ class KeepAwakeForegroundService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        // Create and start the foreground notification
         val notification = createNotification()
         startForeground(NOTIFICATION_ID, notification)
 
         floatingWindow.showFloatingWindow()
 
-        // Return START_STICKY to restart the service if it gets killed
         return START_STICKY
     }
 
     override fun onBind(intent: Intent?): IBinder? {
-        // This service doesn't support binding
         return null
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        // Clean up any resources here
         if (::floatingWindow.isInitialized) {
             floatingWindow.hideFloatingWindow()
         }
@@ -84,7 +78,6 @@ class KeepAwakeForegroundService : Service() {
     }
 
     private fun createNotification(): Notification {
-        // Create an intent that opens your main activity when notification is tapped
         val notificationIntent = Intent()
         val pendingIntent = PendingIntent.getActivity(
             this,
@@ -94,11 +87,11 @@ class KeepAwakeForegroundService : Service() {
         )
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("Keep Awake Service")
-            .setContentText("Service is running, floating")
-            .setSmallIcon(R.drawable.ic_tea_cup) // Use a system icon or replace with your own
+            .setContentTitle("Keep Awake")
+            .setContentText("Keep Awake is running in the background.")
+            .setSmallIcon(R.drawable.ic_tea_cup)
             .setContentIntent(pendingIntent)
-            .setOngoing(true) // Makes the notification persistent
+            .setOngoing(true)
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .setCategory(NotificationCompat.CATEGORY_SERVICE)
             .build()

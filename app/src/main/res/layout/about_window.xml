@@ -41,8 +41,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Made by: Daksh Kumbhar"
+            android:text="Made by: BOLT-3"
             android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:autoLink="web"
+            android:text="https://github.com/BOLT-3/Keep-Awake"
+            android:textColor="@android:color/holo_blue_dark"
             android:textSize="14sp" />
 
         <TextView
@@ -52,6 +62,19 @@
             android:text="Version: 1.0"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnAppInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minWidth="120dp"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:backgroundTint="@android:color/darker_gray"
+            android:text="App Info"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 
 </FrameLayout>
