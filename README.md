@@ -15,7 +15,7 @@
 You can download the latest APK from the [Releases](https://github.com/BOLT-3/Keep-Awake/releases) page.
 
 **Direct Download:**  
-[Keep.Awake.apk](https://github.com/BOLT-3/Keep-Awake/releases/download/v1.0/Keep.Awake.apk)
+[Keep Awake.apk](https://github.com/BOLT-3/Keep-Awake/releases/download/v1.0/Keep.Awake.apk)
 
 To install the APK:
 
