@@ -7,7 +7,8 @@
 - Adds a tile in the Quick Settings menu
 - Keeps the screen awake while the tile is active
 - Long-press the tile to view app information
-- Lightweight and unobtrusive
+- No app launcher icon — runs entirely through system UI
+- Built using up-to-date Android APIs (no deprecated components)
 
 ## Installation
 
